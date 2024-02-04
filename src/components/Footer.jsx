@@ -1,43 +1,22 @@
-import ReactDOM from 'react-dom/client'
-// Bringing in the required imports from 'react-router-dom' to set up application routing behavior
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import React from 'react';
+import { FaLinkedin, FaGithub } from 'react-icons/fa';
 
-import 'bootstrap/dist/css/bootstrap.min.css'
+export default function Footer() {
+  // Replace the LinkedIn and GitHub profile links with your actual profiles
+  const linkedInLink = 'https://www.linkedin.com/in/nicklaus-failor-a42036141/';
+  const githubLink = 'https://github.com/nfailor';
 
-import App from './App';
-import Error from './pages/Error';
-import Home from './pages/Home';
-import Contact from './pages/Contact';
-import Portfolio from './pages/Portfolio';
-import Resume from './pages/Resume';
-
-// Define the accessible routes, and which components respond to which URL
-const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <App />,
-    errorElement: <Error />,
-    children: [
-      {
-        index: true,
-        element: <Home />,
-      },
-      {
-        path: '/Portfolio',
-        element: <Portfolio />,
-      },
-      {
-        path: '/Contact',
-        element: <Contact />,
-      },
-      {
-        path: '/Resume',
-        element: <Resume />,
-      },
-    ],
-  },
-]);
-
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <RouterProvider router={router} />
-);
+  return (
+    <footer>
+      <div className="social-icons">
+        <a href={linkedInLink} target="_blank" rel="noopener noreferrer">
+          <FaLinkedin />
+        </a>
+        <a href={githubLink} target="_blank" rel="noopener noreferrer">
+          <FaGithub />
+        </a>
+      </div>
+      <p>&copy; 2024 Nicklaus Failor. All rights reserved.</p>
+    </footer>
+  );
+}
