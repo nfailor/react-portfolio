@@ -1,6 +1,7 @@
 import React from 'react';
 import Project from '../components/Project';
 import food from '../images/food.jpg';
+import movie from '../images/movie.jpg'
 import text from '../images/text_editor.jpg';
 import tech from '../images/tech.jpeg'
 import planner from '../images/planner.jpeg'
@@ -15,6 +16,12 @@ export default function Portfolio() {
       demoLink: 'https://calm-journey-92388-8076cb9a9428.herokuapp.com/',
       repoLink: 'https://github.com/nfailor/flavor-town',
       imageSrc: food,
+    },
+    {
+      title: 'Reel Recs',
+      demoLink: 'https://victorsamuel-dev.github.io/ReelRecs/',
+      repoLink: 'https://github.com/VictorSamuel-dev/ReelRecs',
+      imageSrc: movie, 
     },
     {
       title: 'Tech Blog',

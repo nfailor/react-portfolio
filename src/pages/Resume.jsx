@@ -34,7 +34,7 @@ export default function Resume() {
             here.
           </a>
         </p>
-        <h3>Proficiencies</h3>
+        <h3 id="prof-head">Proficiencies</h3>
         <ul>
           {proficiencies.map((proficiency, i) => (
             <li key={i}>{proficiency}</li>

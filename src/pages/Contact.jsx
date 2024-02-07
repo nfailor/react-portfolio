@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
+import axios from 'axios';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -49,38 +50,34 @@ export default function Contact() {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     // Add logic to handle form submission, e.g., sending data to a server
+    if (Object.values(formErrors).some((error) => error !== '')) {
+      console.log('Form validation errors. Please fix them before submitting.');
+      return;
+    }
 
-    // For now, just log the form data to the console
-    console.log('Form submitted:', formData);
+    try {
+      const response = await axios.post('https://getform.io/f/d11be971-7076-44ed-8cad-6ef27ee8dced', formData);
 
-    setFormData({
-      name: '',
-      email: '',
-      message: '',
-    });
+      console.log('Form submitted successfully', response.data);
 
-    setFormErrors({
-      name: '',
-      email: '',
-      message: '',
-    });
+      setFormData({
+        name: '',
+        email: '',
+        message: '',
+      });
+
+    } catch (error) {
+      console.error('Error submitting form:', error);
+    }
   };
 
   return (
-    <Container>
-      <Row className='mb-5 mt-3'>
-        <Col lg='8'>
-          <h1 className='display-4 mb-4'>
-            {/* Contact Me */}
-          </h1>
-        </Col>
-      </Row>
-
+    <Container className='contact'>
       <Row className='sec_sp'>
-        <Col lg='5' className='mb-5'>
+        <Col lg='5' className='mb-5 getInTouch'>
           <h3 className='color_sec py-4'>Get in touch</h3>
           <address>
             <strong>Email : nfailor@gmail.com</strong>
@@ -90,8 +87,6 @@ export default function Contact() {
               <strong>Phone : 817-682-2060</strong>
             </p>
           </address>
-          {/* COME BACK TO THIS */}
-          {/* <p>{description}</p> */}
         </Col>
         <Col lg='7' className='d-flex align-items-center'>
           <form className='contact__form w-100' onSubmit={handleSubmit}>
@@ -139,7 +134,7 @@ export default function Contact() {
             <br />
             <Row>
               <Col lg='12' className='form-group'>
-                <button className='btn ac_btn' type='submit' onSubmit={handleSubmit}>Send</button>
+                <button className='btn ac_btn' type='submit' onSubmit={handleSubmit}>Submit</button>
               </Col>
             </Row>
           </form>

@@ -10,11 +10,11 @@ function NavTabs() {
 
   return (
     <Navbar expand="lg" className="nav-bar">
-      <Container>
+      <Container fluid className='navbar-container'>
         <Navbar.Brand ><h1 className='nav-head'>Nicklaus Failor</h1></Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
+          <Nav className="ms-auto">
             <Link to="/" className={currentPage === '/' ? 'nav-link active' : 'nav-link'}>About Me</Link>
             <Link to="/Portfolio" className={currentPage === '/Portfolio' ? 'nav-link active' : 'nav-link'}>Projects</Link>
             <Link to="/Contact" className={currentPage === '/Contact' ? 'nav-link active' : 'nav-link'}>Contact</Link>

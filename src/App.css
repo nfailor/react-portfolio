@@ -1,182 +1,257 @@
 /* Reset some default styles and apply a basic styling to the body */
 * {
-    font-family: 'Raleway', sans-serif;
-    margin: 0;
-    padding: 0;
-  }
-  
-  body {
-    /* background-color: #828489; */
-    /* background-color: #4D7EA8; */
-    /* background-color: #57886C; */
-    background-color: #38A3A5;
-  }
-  
-  /* Add some spacing to the main content */
-  main {
-    margin-top: 20px;
-  }
-  
-  /* Style the project images and overlay */
-  .projects{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  
-  .project {
-    margin: 25px;
-    width: 40%;
-  }
-  
-  .project-image {
-    position: relative;
-    height: 200px; /* Set a fixed height for the project images */
-    background-size: cover;
-    background-position: center;
-    cursor: pointer;
-    border-radius: 5px;
-  }
-  
-  .project-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.7);
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    opacity: 0;
-    transition: opacity 0.3s;
-  }
-  
-  .project-image:hover .project-overlay {
-    opacity: 1;
-  }
-  
-  /* Style the contact form */
-  .form-control {
-    margin-bottom: 15px;
-  }
-  
-  .invalid-feedback {
-    color: #dc3545;
-    font-size: 14px;
-    margin-top: 5px;
-  }
-  
-  /* Style the footer */
-  footer {
-    margin-top: 40px;
-    padding: 20px 0;
-    text-align: center;
-  }
-  
-  .social-icons {
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
-  
-  .social-icons a {
-    color: #333;
-    margin: 0 10px;
-    text-decoration: none;
-    transition: color 0.3s;
-    font-size: 2em;
-  }
-  
-  .social-icons a:hover {
-    color: #007bff;
-  }
-  
-  .project-links a {
-    font-size: 25px;
-    display: block;
-    justify-content: space-between;
-    text-decoration: none;
-    color: #7E52A0;
-    font-weight: bold;
-  }
-  
-  .avatar {
-    border-radius: 10px;
-    width: 250px;
-    height: auto;
-    display: block;
-    margin-left: 15px;
-    margin-right: 15px;
-  }
-  
-  .bio {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .bio-text {
-    margin-left: 15px;
-    margin-right: 15px;
-    font-weight: bold;
-    display: flex;
-    flex-wrap: wrap;
-    width: 50%;
-  }
-  
-  .header {
-    margin-left: 10px;
-    font-size: larger;
-  }
-  
-  .contact__form .form-control {
-    padding: 1.375rem .75rem;
-    line-height: 1.5;
-    color: black;
-    border-radius: 5px !important;
-    border: 1px solid black;
-  }
-  
-  .contact__form input.form-control {
-    margin-bottom: 2em;
-    height: calc(2.5em + .75rem + 2px);
-  }
-  
-  .btn {
-    color: black;
-    border: 1px solid black;
-  }
-  
-  .btn:hover {
-    border: 1px solid black;
-  }
-  
-  .resume-block {
-    text-align: center;
-    margin-top: 20px;
-  }
-  
-  .resume-block ul {
-    padding-left: 0;
-    list-style: none;
-  }
-  
-  .resume-block ul li {
-    margin-bottom: 10px;
-  }
-  
-  .resume-link {
-    color: black;
-    text-decoration: none;
-    font-weight: bold;
-  }
-  
-  .resume-link:hover {
-    text-decoration: underline;
-  }
-  
-  
+  font-family: "Helvetica", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  /* background-color: #828489; */
+  /* background-color: #4D7EA8; */
+  /* background-color: #57886C; */
+  /* background-color: #38a3a5; */
+  background-color: #00241B;
+  color: white;
+  margin: 0;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Add some spacing to the main content */
+main {
+  margin-top: 20px;
+  flex: 1;
+}
+
+/* Style the project images and overlay */
+.projects {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.project {
+  margin: 25px;
+  width: 40%;
+}
+
+.project-image {
+  position: relative;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.project-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.project-image:hover .project-overlay {
+  opacity: 1;
+}
+
+.project-links a {
+  font-size: 25px;
+  display: block;
+  justify-content: space-between;
+  text-decoration: none;
+  color: #7e52a0;
+  font-weight: bold;
+}
+
+.invalid-feedback {
+  color: #dc3545;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+/* Style the footer */
+footer {
+  margin-top: 40px;
+  padding: 20px 0;
+  text-align: center;
+  background-color: #297045;
+}
+
+.social-icons {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.social-icons a {
+  color: #333;
+  margin: 0 10px;
+  text-decoration: none;
+  transition: color 0.3s;
+  font-size: 2em;
+}
+
+.social-icons a:hover {
+  color: #007bff;
+}
+
+/* Style the about me section */
+
+.avatar {
+  border-radius: 10px;
+  width: 250px;
+  height: auto;
+  display: block;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.bio {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.bio-text {
+  margin-left: 15px;
+  margin-right: 15px;
+  font-weight: bold;
+  display: flex;
+  flex-wrap: wrap;
+  width: 50%;
+}
+
+/* Style the resume page */
+
+.resume-block {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.resume-block ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+.resume-block ul li {
+  margin-bottom: 10px;
+}
+
+.resume-link {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.resume-link:hover {
+  text-decoration: underline;
+}
+
+#prof-head {
+  margin-top: 50px;
+  text-decoration: underline;
+}
+
+/* Style the navbar */
+
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-nav {
+  margin-left: auto;
+}
+
+.navbar-container {
+  width: 100%;
+}
+
+.nav-link.active {
+  color: white !important;
+  font-weight: bold;
+}
+
+.nav-link {
+  color: white;
+  font-size: 20px;
+}
+
+.nav-head {
+  color: white;
+  margin-right: auto;
+}
+
+/* Style the contact form */
+.contact {
+  text-align: center;
+}
+
+.contact .sec_sp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.getInTouch, .contact__form {
+  width: 100%
+}
+
+.getInTouch {
+  /* background-color: #1B2021; */
+  margin-bottom: 20px;
+}
+
+.form-control {
+  margin-bottom: 15px;
+  background-color: #B3AF8F;
+}
+
+.contact__form {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.form-control {
+  color: black !important;
+}
+
+.contact__form .form-control {
+  padding: 1.375rem 0.75rem;
+  line-height: 1.5;
+  color: black;
+  border-radius: 5px !important;
+  border: 1px solid black;
+}
+
+.contact__form input.form-control {
+  margin-bottom: 2em;
+  height: calc(2.5em + 0.75rem + 2px);
+}
+
+.btn {
+  color: black;
+  border: 1px solid black;
+  background-color: #B3AF8F;
+}
+
+.btn:hover {
+  border: 1px solid black;
+  background-color: black;
+}
